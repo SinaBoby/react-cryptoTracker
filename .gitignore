@@ -1,0 +1,6 @@
+scss/
+style.min.css
+traiding.html
+node_modules
+!lib
+!lib/
