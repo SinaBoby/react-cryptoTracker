@@ -4,7 +4,7 @@ import WebSocket, { WebSocketServer } from 'ws';
 import http from "http";
 import fs from "fs"
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 //var app = function (req, res) { res.end('hello!') };
 
 const server = http.createServer(app).listen(PORT, () => {
