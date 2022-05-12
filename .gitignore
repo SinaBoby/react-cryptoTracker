@@ -4,3 +4,6 @@ traiding.html
 node_modules
 !lib
 !lib/
+.vscode
+.eslintrc.js
+.prettierrc.js

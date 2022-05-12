@@ -40,7 +40,7 @@ const TechnicalWidget = () => {
       container_id: `btc`,
     });
     refr.current.append(script1);
-  }, []);
+  }, [symbol]);
 
   return (
     <div className="TechnicalWidget-wrapper">

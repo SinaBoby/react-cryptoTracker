@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.nav-list{
+#nav-list{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,6 +30,13 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 5px 15px;
+}
+.navBar {
+  height: 80px;
+  background-color: #9ca3af;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 #logo {
   width: 200px;

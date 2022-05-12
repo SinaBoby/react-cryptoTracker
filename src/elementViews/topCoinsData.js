@@ -17,8 +17,7 @@ export const getTopCoinsData = () => {
     }) */
     topCoinsElementView();
     displayLoading();
-    const url =
-      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=true&price_change_percentage=1h%2C24%2C7d';
+    
     fetch('/api/topCoins')
       .then((response) => {
         if (!response.ok) {
@@ -66,7 +65,7 @@ async function loadDetails(e) {
     errorHandler(error);
   }
 }
-function loadCoinData(coin) {
+function loadCoinData(coin)  {
   const topCoins = document.getElementById('top-coins-body');
   const listItem = document.createElement('tr');
   listItem.innerHTML = `

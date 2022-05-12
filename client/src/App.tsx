@@ -1,11 +1,11 @@
 
+import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 
-import TechnicalWidget from './components/TechnicalWidget';
 
 
-function App() {
+const App: React.FC = () => {
 
   return (
     <div className="App">
