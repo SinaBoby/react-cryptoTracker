@@ -12,3 +12,4 @@ csr.pem
 key.pem
 .jshintrc
 ProcFile
+yarn.lock
