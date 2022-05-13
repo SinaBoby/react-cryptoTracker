@@ -1,11 +1,14 @@
-import TechnicalWidget from "./TechnicalWidget"
+import React from 'react';
+import TechnicalWidget from './TechnicalWidget';
 
 const TechnicalPage = () => {
-  return (
-    <div>
-      <h1>Technical</h1>
-      <TechnicalWidget/>
-    </div>
-  )
-}
-export default TechnicalPage
+    return (
+        <div>
+            <h1>Technical</h1>
+
+           
+            <TechnicalWidget />
+        </div>
+    );
+};
+export default TechnicalPage;

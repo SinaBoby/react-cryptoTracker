@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+
 const TechnicalWidget = () => {
-  const [symbol, setSymbol] = useState('BTCUSDT');
+  const [symbol] = useState('BTCUSDT');
   const refr = useRef(null);
 
   console.log(refr);
@@ -39,7 +40,7 @@ const TechnicalWidget = () => {
       popup_height: '650',
       container_id: `btc`,
     });
-    refr.current.append(script1);
+    if (refr.current) refr.current.append(script1);
   }, [symbol]);
 
   return (
