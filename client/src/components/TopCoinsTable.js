@@ -8,7 +8,7 @@ const TopCoinsTable = () => {
         const response = await fetch('/api/topCoins');
         const json = await response.json();
         setData(json);
-        console.log(data);
+      
       } catch (error) {
         console.log(error);
       }

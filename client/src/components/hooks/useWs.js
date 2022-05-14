@@ -28,8 +28,8 @@ const useWs = (symbol) => {
         console.log(error);
       }
     })();
-   
-  }, []);
+    
+  }, [symbol]);
   function loadPriceTicker(symbol = 'btcusdt') {
     return new Promise((resolve, reject) => {
       let ws = new WebSocket(`ws://localhost:5000/live?symbol=${symbol}`);

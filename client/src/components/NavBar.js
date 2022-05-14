@@ -22,7 +22,7 @@ const NavBar = () => {
                     Technicals
                 </Link>
                 <Link className="nav-item" id="categories-info-page" to="/categories">
-                    Categries
+                    Categories
                 </Link>
             </div>
         </div>
