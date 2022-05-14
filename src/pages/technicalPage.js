@@ -23,13 +23,13 @@ export const technicalPage = () => {
       }
     })
     .then((data) => {
-      const symbols = data.symbols;
+      //const symbols = data.symbols;
 
-      return symbols;
+      return data;
     })
     .then((symbols) => {
-      symbols.forEach((arr) => {
-        const symbol = arr.symbol;
+      symbols.forEach((symbol) => {
+       // const symbol = arr.symbol;
         const option = document.createElement('option');
         option.value = symbol;
         option.textContent = symbol;

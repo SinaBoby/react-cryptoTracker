@@ -112,8 +112,10 @@ router.get('/binanceInfo', async (req, res) => {
       res.status(404).json({msg:'Unable to load Global Data : HTTP ERROR'})
     } else {
       const json = await fetch_response.json()
+      let pairs = []
+      json.symbols.forEach(obj => pairs.push(obj.symbol))
       
-      res.status(200).json(json) 
+      res.status(200).json(pairs) 
     }
   } catch (error) {
     console.log(error);

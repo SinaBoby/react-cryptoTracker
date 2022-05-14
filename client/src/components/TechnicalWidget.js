@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef} from 'react';
 
-const TechnicalWidget = () => {
-  const [symbol] = useState('BTCUSDT');
+const TechnicalWidget = ({symbol}) => {
+
   const refr = useRef(null);
 
   console.log(refr);
