@@ -13,7 +13,7 @@ export async function loadLivePrice(symbol = 'btcusdt') {
     errorHandler(error);
   }
 }
-function loadPriceTicker(symbol = 'btcusdt') {
+export function loadPriceTicker(symbol = 'btcusdt') {
   return new Promise((resolve, reject) => {
     let ws = new WebSocket(`ws://${location.host}/live?symbol=${symbol}`);
 

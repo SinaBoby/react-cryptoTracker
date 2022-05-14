@@ -1,8 +1,12 @@
 import React from 'react';
+
+import TopCoinsTable from './TopCoinsTable';
 const HomePage = () => {
+ 
     return (
         <div>
-            <h1>Home</h1>
+            
+            <TopCoinsTable/>
         </div>
     );
 };

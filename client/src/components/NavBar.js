@@ -1,13 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
+  const navigate= useNavigate()
+  function navigateToHome() {
+    navigate('/')
+  }
     return (
         <div className="navBar">
             <img
                 src="https://github.com/SinaBoby/CryptoTrackerApp/blob/loading_spin_feature/public/assets/logo2.png?raw=true"
                 alt="logo"
                 id="logo"
+                onClick={navigateToHome}
             />
             <div id="nav-list">
                 <Link className="nav-item" id="market-page" to="/marketData">

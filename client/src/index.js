@@ -7,12 +7,15 @@ import TechnicalPage from './components/TechnicalPage';
 import CategoriesPage from './components/CategoriesPage';
 import MarketDataPage from './components/MarketDataPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import TopCoinDetail from './components/TopCoinDetail';
 const root= ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
         <Routes>
             <Route path="/" element={<App />} />
+              
+            
+            <Route path="/topCoinDetail/:coin" element={<TopCoinDetail/>}/>
             <Route path="/marketData" element={<MarketDataPage />} />
             <Route path="/technical" element={<TechnicalPage />} />
             <Route path="/categories" element={<CategoriesPage />} />
