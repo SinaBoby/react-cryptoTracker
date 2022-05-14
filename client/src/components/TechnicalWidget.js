@@ -1,7 +1,6 @@
-import React, { useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 
-const TechnicalWidget = ({symbol}) => {
-
+const TechnicalWidget = ({ symbol }) => {
   const refr = useRef(null);
 
   console.log(refr);

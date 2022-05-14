@@ -8,7 +8,6 @@ const TopCoinsTable = () => {
         const response = await fetch('/api/topCoins');
         const json = await response.json();
         setData(json);
-      
       } catch (error) {
         console.log(error);
       }
@@ -30,14 +29,10 @@ const TopCoinsTable = () => {
           </tr>
         </thead>
         <tbody id="top-coins-body">
-          {data && data.map((coin, index) => {
-            return (
-              
-
-                <TopCoinRow key={index} coin={coin}/>
-              
-            )
-          })}
+          {data &&
+            data.map((coin, index) => {
+              return <TopCoinRow key={index} coin={coin} />;
+            })}
         </tbody>
       </table>
     </div>

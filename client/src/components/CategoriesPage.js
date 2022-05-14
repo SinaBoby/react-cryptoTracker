@@ -28,6 +28,8 @@ const CategoriesPage = () => {
     <div>
       <NavBar />
       <LivePriceList />
+      <div id="user-interface">
+
       <h1>categories</h1>
       <h2>Please select a category from the list:</h2>
       {loading ? (
@@ -45,6 +47,7 @@ const CategoriesPage = () => {
 
       <div id="cat-info-container">
         <Outlet />
+      </div>
       </div>
     </div>
   );

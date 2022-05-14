@@ -5,7 +5,6 @@ import LivePriceList from './LivePriceList';
 import NavBar from './NavBar';
 import PairsList from './PairsList';
 
-
 const TechnicalPage = () => {
   const [pairsData, loading, error] = useFetch('/api/binanceInfo');
 
@@ -19,24 +18,21 @@ const TechnicalPage = () => {
     <div>
       <NavBar />
       <LivePriceList />
-      {loading ? (
-        <h2>loading</h2>
-      ) : error ? (
-        <h2> error</h2>
-      ) : pairsData ? (
-        <PairsList
-          handlePairChange={handlePairChange}
-          pairs={pairsData}
-        />
-      ) : (
-        <h2>noContent</h2>
-      )}
+      <div id="user-interface">
+        {loading ? (
+          <h2>loading</h2>
+        ) : error ? (
+          <h2> error</h2>
+        ) : pairsData ? (
+          <PairsList handlePairChange={handlePairChange} pairs={pairsData} />
+        ) : (
+          <h2>noContent</h2>
+        )}
 
-      <div id="technicalChart-container">
-        <Outlet />
+        <div id="technicalChart-container">
+          <Outlet />
+        </div>
       </div>
-
-      
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const LightChart = ({pair}) => {
-  
+const LightChart = ({ pair }) => {
   const divRef = useRef(null);
 
   console.log(divRef);
@@ -46,5 +45,3 @@ const LightChart = ({pair}) => {
   );
 };
 export default LightChart;
-
-

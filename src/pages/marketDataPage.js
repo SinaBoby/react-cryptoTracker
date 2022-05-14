@@ -28,7 +28,7 @@ export async function marketDataPage() {
       
     });
     const trendsList = await fetchTrends();
-    const coins = trendsList.coins;
+    const coins = trendsList;
     coins.forEach((coin) => {
       
       const coinRow = document.createElement('tr');
@@ -56,7 +56,7 @@ export async function marketDataPage() {
       document.getElementById('exchanges-body').appendChild(exchangeRow);
     });
     const global = await fetchGlobal();
-    printGlobalInfo(global.data);
+    printGlobalInfo(global);
     function printGlobalInfo(data) {
       const globalList = document.getElementById('global');
       globalList.innerHTML = `

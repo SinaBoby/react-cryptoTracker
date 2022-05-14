@@ -11,7 +11,7 @@ router.get('/global', async (req, res) => {
     } else {
       const json = await fetch_response.json()
       
-      res.status(200).json(json) 
+      res.status(200).json(json.data) 
     }
   } catch (error) {
     console.log(error);
@@ -45,7 +45,7 @@ router.get('/trends', async (req, res) => {
     } else {
       const json = await fetch_response.json()
       
-      res.status(200).json(json) 
+      res.status(200).json(json.coins) 
     }
   } catch (error) {
     console.log(error);
