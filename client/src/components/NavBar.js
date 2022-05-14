@@ -1,11 +1,18 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
   const navigate = useNavigate();
   function navigateToHome() {
     navigate('/');
   }
+  const activeLink = ({ isActive }) =>
+  isActive
+    ? {  color: '#fff',
+        background: '#9ca3af',
+      }
+    : { color: '#545e6f',
+      background: '#f0f0f0' }
   return (
     <div className="navBar">
       <img
@@ -15,15 +22,28 @@ const NavBar = () => {
         onClick={navigateToHome}
       />
       <div id="nav-list">
-        <Link className="nav-item" id="market-page" to="/marketData">
+        <NavLink
+          className="nav-item"
+          style={activeLink
+          }
+          id="market-page"
+          to="/marketData"
+        >
           Market Data
-        </Link>
-        <Link className="nav-item" id="technical-page" to="/technical">
+        </NavLink>
+        <NavLink className="nav-item" style={activeLink
+          } id="technical-page" to="/technical">
           Technicals
-        </Link>
-        <Link className="nav-item" id="categories-info-page" to="/categories">
+        </NavLink>
+        <NavLink
+          className="nav-item"
+          style={activeLink
+          }
+          id="categories-info-page"
+          to="/categories"
+        >
           Categories
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

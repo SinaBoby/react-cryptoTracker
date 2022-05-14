@@ -12,7 +12,7 @@ const TopCoinRow = ({ coin }) => {
   };
   return (
     <tr>
-      <td>${coin.market_cap_rank}</td>
+      <td>{coin.market_cap_rank}</td>
       <td>
         <img src={coin.image} className="coin-logo" />
         <p
@@ -20,8 +20,8 @@ const TopCoinRow = ({ coin }) => {
           id={coin.symbol}
           onClick={clickHandler}
         >
-          {' '}
-          ${coin.name}
+          
+          {coin.name}
         </p>
       </td>
       <td>${coin.current_price} $</td>

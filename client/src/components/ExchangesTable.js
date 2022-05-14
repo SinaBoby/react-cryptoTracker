@@ -19,7 +19,7 @@ function ExchangesTable({ exchanges }) {
           {exchanges.map((exchange, index) => {
             return (
               <tr key={index}>
-                <td>${exchange.trust_score_rank}</td>
+                <td>{exchange.trust_score_rank}</td>
                 <td>
                   <img src={exchange.image} />
                 </td>
