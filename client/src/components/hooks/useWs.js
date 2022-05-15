@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 const useWs = (symbol) => {
   const [lastPrice, setLastPrice] = useState({});
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     let wsObject;
@@ -26,6 +27,7 @@ const useWs = (symbol) => {
         };
       } catch (error) {
         console.log(error);
+        setError(error)
       }
     })();
     return () => {
@@ -42,10 +44,10 @@ const useWs = (symbol) => {
       };
 
       ws.onerror = (err) => {
-        reject(err);
         setTimeout(() => {
           loadPriceTicker((symbol = 'btcusdt'));
         }, 5000);
+        reject(err);
       };
       ws.onclose = (event) => {
         console.log('disconnected');
@@ -54,7 +56,7 @@ const useWs = (symbol) => {
     });
   }
 
-  return [lastPrice, loading];
+  return [lastPrice, loading, error];
 };
 
 export default useWs;
