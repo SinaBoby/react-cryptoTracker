@@ -6,7 +6,7 @@ const LivePriceElement = ({ symbol }) => {
   return (
     <li>
       {loading ? (
-        <h3>loading...</h3>
+        <div id="loading"></div>
       ) : (
         `${symbol.slice(0, symbol.length - 4).toUpperCase()}/${symbol.slice(
           symbol.length - 4,

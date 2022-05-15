@@ -33,7 +33,7 @@ const CategoriesPage = () => {
       <h1>categories</h1>
       <h2>Please select a category from the list:</h2>
       {loading ? (
-        <h2>loading</h2>
+        <div id="loading"></div>
       ) : error ? (
         <h2>{error.message}</h2>
       ) : (

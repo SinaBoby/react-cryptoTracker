@@ -16,9 +16,11 @@ const MarketDataPage = () => {
       <NavBar />
       <LivePriceList />
       <div id="user-interface">
+        <div id="marketData-element">
+
         <div className="flex-container">
           {trendsLoading ? (
-            <h2>loading</h2>
+            <div id="loading"></div>
           ) : trendsError ? (
             <h2>{trendsError.message}</h2>
           ) : (
@@ -26,7 +28,7 @@ const MarketDataPage = () => {
           )}
 
           {globalLoading ? (
-            <h2>loading</h2>
+            <div id="loading"></div>
           ) : globalError ? (
             <h2>{globalError.message}</h2>
           ) : (
@@ -34,12 +36,13 @@ const MarketDataPage = () => {
           )}
         </div>
         {exchangesLoading ? (
-          <h2>loading</h2>
+          <div id="loading"></div>
         ) : exchangesError ? (
           <h2>{exchangesError.message}</h2>
         ) : (
           <ExchangesTable exchanges={exchangesData} />
         )}
+        </div>
       </div>
     </div>
   );

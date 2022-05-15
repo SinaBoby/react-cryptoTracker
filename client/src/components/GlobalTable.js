@@ -7,10 +7,10 @@ function GlobalTable({ data }) {
       <h4>Global market data</h4>
       <ul id="global">
         <li>
-          <span>Active CryptoCurrencies :</span> ${data.active_cryptocurrencies}{' '}
+          <span>Active CryptoCurrencies :</span> {data.active_cryptocurrencies}
         </li>
         <li>
-          <span>Number Of Markets :</span> ${data.markets}{' '}
+          <span>Number Of Markets :</span> {data.markets}
         </li>
         <li
           className={
@@ -19,8 +19,8 @@ function GlobalTable({ data }) {
               : 'bearish'
           }
         >
-          <span>Total Market Cap Change in 24h :</span> $
-          {data.market_cap_change_percentage_24h_usd} %{' '}
+          <span>Total Market Cap Change in 24h :</span>
+          {data.market_cap_change_percentage_24h_usd}
         </li>
       </ul>
     </div>

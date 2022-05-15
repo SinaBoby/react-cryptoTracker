@@ -20,7 +20,7 @@ const TechnicalPage = () => {
       <LivePriceList />
       <div id="user-interface">
         {loading ? (
-          <h2>loading</h2>
+          <div id="loading"></div>
         ) : error ? (
           <h2> error</h2>
         ) : pairsData ? (

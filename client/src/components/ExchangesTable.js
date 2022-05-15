@@ -23,13 +23,13 @@ function ExchangesTable({ exchanges }) {
                 <td>
                   <img src={exchange.image} />
                 </td>
-                <td>${exchange.name}</td>
+                <td>{exchange.name}</td>
                 <td>
-                  ${parseFloat(exchange.trade_volume_24h_btc).toFixed(4)} BTC
+                  {parseFloat(exchange.trade_volume_24h_btc).toFixed(4)} BTC
                 </td>
-                <td>${exchange.country}</td>
+                <td>{exchange.country}</td>
                 <td>
-                  <a href={exchange.url}>${exchange.url}</a>
+                  <a href={exchange.url}>{exchange.url}</a>
                 </td>
               </tr>
             );
