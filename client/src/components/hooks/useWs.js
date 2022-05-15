@@ -49,9 +49,9 @@ const useWs = (symbol) => {
         }, 5000);
         reject(err);
       };
-      ws.onclose = (event) => {
+      ws.onclose = () => {
         console.log('disconnected');
-        console.log(event)
+        
       };
     });
   }

@@ -3,7 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { CategoriesContext } from '../CategoriesContext';
 import useFetch from './hooks/useFetch';
 import LivePriceList from './LivePriceList';
-import NavBar from './NavBar';
+
 
 const CategoriesPage = () => {
   let [categories, loading, error] = useFetch('/api/catList');
@@ -27,12 +27,11 @@ const CategoriesPage = () => {
   const navigate = useNavigate();
   function handleCatChange(e) {
     const category = e.target.value;
-    console.log(category);
     navigate(`/categories/${category}`);
   }
   return (
     <div>
-      <NavBar />
+      
       <LivePriceList />
       <div id="user-interface">
 

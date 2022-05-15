@@ -3,30 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import TechnicalPage from './components/TechnicalPage';
-import CategoriesPage from './components/CategoriesPage';
-import MarketDataPage from './components/MarketDataPage';
-import CategoryInfo from './components/CategoryInfo';
-import TechnicalChart from './components/TechnicalChart';
+
 import { CategoriesProvider } from './CategoriesContext';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import TopCoinDetail from './components/TopCoinDetail';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CategoriesProvider>
     <Router>
-      <Routes>
-        <Route path="/" element={<App />} />
-
-        <Route path="/topCoinDetail/:coin" element={<TopCoinDetail />} />
-        <Route path="/marketData" element={<MarketDataPage />} />
-        <Route path="/technical" element={<TechnicalPage />}>
-          <Route path="/technical/:pair" element={<TechnicalChart />} />
-        </Route>
-        <Route path="/categories" element={<CategoriesPage />}>
-          <Route path="/categories/:category" element={<CategoryInfo />} />
-        </Route>
-      </Routes>
+      <App/>
     </Router>
   </CategoriesProvider>,
 );

@@ -3,7 +3,7 @@ import React from 'react';
 import TopCoinsTable from './TopCoinsTable';
 const HomePage = () => {
   return (
-    <div>
+    <div id="user-interface">
       <TopCoinsTable />
     </div>
   );
