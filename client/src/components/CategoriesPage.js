@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext, useEffect} from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { CategoriesContext } from '../CategoriesContext';
 import useFetch from './hooks/useFetch';
@@ -7,16 +7,22 @@ import NavBar from './NavBar';
 
 const CategoriesPage = () => {
   let [categories, loading, error] = useFetch('/api/catList');
-  const { setCategories } = useContext(CategoriesContext);
-  const [categoriesInfo] = useFetch('/api/catInfo');
-  setCategories(categoriesInfo); 
+  const { setCategories, setCategoriesLoading, setCategoriesError } = useContext(CategoriesContext);
+  const [categoriesInfo, catInfoLoading, catInfoError] = useFetch('/api/catInfo');
   let available ;
+  useEffect(() => {
+   
+    setCategories(categoriesInfo); 
+    setCategoriesLoading(catInfoLoading)
+    setCategoriesError(catInfoError)
+  }, [categoriesInfo])
   if(categories && categoriesInfo){
 
      available = categories.filter (catName => categoriesInfo.some(cat => cat.name === catName.name))
   }
+  
  
-  console.log(available)
+ 
   
   const navigate = useNavigate();
   function handleCatChange(e) {

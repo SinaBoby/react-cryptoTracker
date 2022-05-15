@@ -5,15 +5,15 @@ import { CategoriesContext } from '../CategoriesContext';
 
 function CategoryInfo() {
   const { category } = useParams();
-  const { categories } = useContext(CategoriesContext);
+  const { categories, categoriesLoading, categoriesError } =
+    useContext(CategoriesContext);
   const selected =
     categories && categories.filter((cat) => cat.name === category)[0];
-  console.log(selected);
+
   return (
     <div>
       {selected ? (
         <div>
-          {' '}
           <h2>{selected.name}</h2>
           <h4>Content:</h4>
           <p id="content">
@@ -43,6 +43,10 @@ function CategoryInfo() {
             <img id="third-asset" src={selected.top_3_coins[2]} />
           </ul>
         </div>
+      ) :categoriesLoading ? (
+        <div id="loading"></div>
+      ) : categoriesError ? (
+        <h2>{categoriesError.message}</h2>
       ) : (
         <h2>nocontent</h2>
       )}

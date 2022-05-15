@@ -5,10 +5,11 @@ const useWs = (symbol) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let wsObject;
     (async () => {
       try {
         const ws = await loadPriceTicker(symbol);
-
+        wsObject = ws;
         ws.onmessage = (event) => {
           setLoading(false);
           let stockObject = JSON.parse(event.data);
@@ -27,6 +28,9 @@ const useWs = (symbol) => {
         console.log(error);
       }
     })();
+    return () => {
+      wsObject.close();
+    };
   }, [symbol]);
   function loadPriceTicker(symbol = 'btcusdt') {
     return new Promise((resolve, reject) => {
@@ -39,13 +43,17 @@ const useWs = (symbol) => {
 
       ws.onerror = (err) => {
         reject(err);
-        ws.open();
+        setTimeout(() => {
+          loadPriceTicker((symbol = 'btcusdt'));
+        }, 5000);
       };
-      ws.onclose = () => {
+      ws.onclose = (event) => {
         console.log('disconnected');
+        console.log(event)
       };
     });
   }
+
   return [lastPrice, loading];
 };
 

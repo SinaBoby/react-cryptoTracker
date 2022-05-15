@@ -2,7 +2,7 @@ import app from './index.js';
 import queryString from 'query-string';
 import WebSocket, { WebSocketServer } from 'ws';
 import http from "http";
-import fs from "fs"
+//import fs from "fs"
 
 const PORT = process.env.PORT || 5000;
 //var app = function (req, res) { res.end('hello!') };

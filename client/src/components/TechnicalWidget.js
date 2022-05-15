@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 
 const TechnicalWidget = ({ symbol }) => {
-  const refr = useRef(null);
+  const widgetContainer = useRef(null);
 
-  console.log(refr);
+ 
   useEffect(() => {
     const script1 = document.createElement('script');
     script1.src = 'https://s3.tradingview.com/tv.js';
@@ -39,12 +39,12 @@ const TechnicalWidget = ({ symbol }) => {
       popup_height: '650',
       container_id: `btc`,
     });
-    if (refr.current) refr.current.append(script1);
+    if (widgetContainer.current) widgetContainer.current.append(script1);
   }, [symbol]);
 
   return (
     <div className="TechnicalWidget-wrapper">
-      <div className="tradingview-widget-container" ref={refr}>
+      <div className="tradingview-widget-container" ref={widgetContainer}>
         <div id="btc" style={{ width: '800px', height: '600px' }}></div>
       </div>
     </div>

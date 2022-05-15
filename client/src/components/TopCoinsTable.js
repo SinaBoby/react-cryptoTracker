@@ -2,19 +2,8 @@ import React from 'react';
 import TopCoinRow from './TopCoinRow';
 import useFetch from './hooks/useFetch';
 const TopCoinsTable = () => {
-  //const [data, setData] = useState([]);
-  const [data, loading, error] = useFetch('/api/topCoins')
- /*  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch('/api/topCoins');
-        const json = await response.json();
-        setData(json);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []); */
+  const [data, loading, error] = useFetch('/api/topCoins');
+
   return (
     <div id="topCoins-container">
       <h1>Top 50 of the Market</h1>
@@ -31,10 +20,24 @@ const TopCoinsTable = () => {
           </tr>
         </thead>
         <tbody id="top-coins-body">
-          { loading ? <div id="loading"></div> : error ? <h2>{error.message}</h2> : data &&
+          {loading ? (
+            <tr>
+              <td>
+                <div id="loading"></div>
+              </td>
+            </tr>
+          ) : error ? (
+            <tr>
+              <td>
+                <h2>{error.message}</h2>
+              </td>
+            </tr>
+          ) : (
+            data &&
             data.map((coin, index) => {
               return <TopCoinRow key={index} coin={coin} />;
-            })}
+            })
+          )}
         </tbody>
       </table>
     </div>

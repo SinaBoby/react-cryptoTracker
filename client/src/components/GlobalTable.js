@@ -1,7 +1,7 @@
 import React from 'react';
 
 function GlobalTable({ data }) {
-  console.log(data);
+  
   return (
     <div id="global-container">
       <h4>Global market data</h4>

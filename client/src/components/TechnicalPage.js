@@ -11,7 +11,7 @@ const TechnicalPage = () => {
   const navigate = useNavigate();
   function handlePairChange(e) {
     const pair = e.target.value;
-    console.log(pair);
+   
     navigate(`${pair}`);
   }
   return (

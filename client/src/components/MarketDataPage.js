@@ -10,7 +10,7 @@ const MarketDataPage = () => {
   const [globalData, globalLoading, globalError] = useFetch('/api/global');
   const [exchangesData, exchangesLoading, exchangesError] =
     useFetch('/api/exchanges');
-  console.log(trendsData, trendsLoading, trendsError);
+ 
   return (
     <div>
       <NavBar />

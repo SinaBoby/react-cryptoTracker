@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-const TopCoinRow = ({ coin }) => {
+const TopCoinRow = ({ coin}) => {
   const location = useLocation();
 
   const clickHandler = () => {
@@ -12,6 +12,7 @@ const TopCoinRow = ({ coin }) => {
   };
   return (
     <tr>
+      
       <td>{coin.market_cap_rank}</td>
       <td>
         <img src={coin.image} className="coin-logo" />
