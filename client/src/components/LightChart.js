@@ -38,9 +38,12 @@ const LightChart = ({ pair }) => {
 
   return (
     <div className="TechnicalWidget-wrapper">
-      <div className="tradingview-widget-container" ref={divRef}>
-        <div id="btc" style={{ width: '800px', height: '600px' }}></div>
-      </div>
+      <div
+        className="tradingview-widget-container"
+        id="btc"
+        style={{ width: '800px', height: '600px', position: 'relative' }}
+        ref={divRef}
+      ></div>
     </div>
   );
 };

@@ -10,7 +10,7 @@ const TopCoinRow = ({ coin}) => {
     window.open(
       window.location.origin + `/topCoinDetail/${coin.symbol}`,
       '_blank',
-      'toolbar=1,location=1,menubar=1,width=800,height=600',
+      'width=800,height=600',
     );
   };
   const { watchList, setWatchList } = useContext(WatchListContext);

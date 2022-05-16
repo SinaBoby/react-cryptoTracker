@@ -144,7 +144,9 @@ th {
   width: 20px;
   height: 20px;
 }
-
+.tradingview-widget-container {
+  position :relative
+}
 table {
   display: table;
   width: 100%;
