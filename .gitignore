@@ -13,3 +13,4 @@ key.pem
 .jshintrc
 ProcFile
 yarn.lock
+client

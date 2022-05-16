@@ -1,19 +1,16 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { ThemeContext } from '../ThemeContext';
+import ThemeToggleButton from './ThemeToggleButton';
 const NavBar = () => {
- const {toggleFunction} = useContext(ThemeContext)
   const navigate = useNavigate();
+
   function navigateToHome() {
     navigate('/');
   }
   const activeLink = ({ isActive }) =>
-  isActive
-    ? {  color: '#fff',
-        background: '#9ca3af',
-      }
-    : { color: '#545e6f',
-      background: '#f0f0f0' }
+    isActive
+      ? { color: '#fff', background: '#9ca3af' }
+      : { color: '#545e6f', background: '#f0f0f0' };
   return (
     <div className="navBar">
       <img
@@ -25,21 +22,23 @@ const NavBar = () => {
       <div id="nav-list">
         <NavLink
           className="nav-item"
-          style={activeLink
-          }
+          style={activeLink}
           id="market-page"
           to="/marketData"
         >
           Market Data
         </NavLink>
-        <NavLink className="nav-item" style={activeLink
-          } id="technical-page" to="/technical">
+        <NavLink
+          className="nav-item"
+          style={activeLink}
+          id="technical-page"
+          to="/technical"
+        >
           Technicals
         </NavLink>
         <NavLink
           className="nav-item"
-          style={activeLink
-          }
+          style={activeLink}
           id="categories-info-page"
           to="/categories"
         >
@@ -47,17 +46,14 @@ const NavBar = () => {
         </NavLink>
         <NavLink
           className="nav-item"
-          style={activeLink
-          }
+          style={activeLink}
           id="categories-info-page"
           to="/watchList"
         >
           WatchList
         </NavLink>
-        <button onClick={() => {
-          toggleFunction()
-          
-        }}>change theme</button>
+
+        <ThemeToggleButton />
       </div>
     </div>
   );
