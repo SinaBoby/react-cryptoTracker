@@ -7,11 +7,13 @@ import reportWebVitals from './reportWebVitals';
 import { CategoriesProvider } from './CategoriesContext';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { WatchListProvider } from './WatchListContext';
+import {  ThemeProvider } from './ThemeContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
+  <ThemeProvider>
+
     <WatchListProvider>
     <CategoriesProvider>
       <Router>
@@ -19,6 +21,7 @@ root.render(
       </Router>
     </CategoriesProvider>
   </WatchListProvider>
+  </ThemeProvider>
  
   ,
 );

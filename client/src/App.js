@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import './App.css';
 import HomePage from './components/HomePage';
 
@@ -10,10 +10,13 @@ import TechnicalChart from './components/TechnicalChart';
 import TopCoinDetail from './components/TopCoinDetail';
 import { Routes,Route } from 'react-router-dom';
 import WatchList from './components/WatchList';
+import { ThemeContext } from './ThemeContext';
 
 const App = () => {
+ const {theme} = useContext(ThemeContext)
+  
   return (
-    <div className="App">
+    <div className="App" style={{background:theme.background, color:theme.foreground}}>
       
       <Routes>
         <Route path="/" element={<HomePage />} />
