@@ -6,7 +6,12 @@
   margin: 0;
   padding: 0;
 }
-
+#dark * {
+  color:#ffffff
+}
+#light * {
+  color: #000000
+}
 body {
   background-color: #f9f9f9;
 }

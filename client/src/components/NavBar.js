@@ -1,8 +1,8 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-
+import { ThemeContext } from '../ThemeContext';
 const NavBar = () => {
- 
+ const {toggleFunction} = useContext(ThemeContext)
   const navigate = useNavigate();
   function navigateToHome() {
     navigate('/');
@@ -54,6 +54,10 @@ const NavBar = () => {
         >
           WatchList
         </NavLink>
+        <button onClick={() => {
+          toggleFunction()
+          
+        }}>change theme</button>
       </div>
     </div>
   );
