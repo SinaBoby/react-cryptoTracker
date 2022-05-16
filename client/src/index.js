@@ -7,11 +7,11 @@ import reportWebVitals from './reportWebVitals';
 import { CategoriesProvider } from './CategoriesContext';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { WatchListProvider } from './WatchListContext';
-import { TopCoinsProvider } from './TopCoinsContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <TopCoinsProvider>
+  
     <WatchListProvider>
     <CategoriesProvider>
       <Router>
@@ -19,7 +19,7 @@ root.render(
       </Router>
     </CategoriesProvider>
   </WatchListProvider>
-  </TopCoinsProvider>
+ 
   ,
 );
 // If you want to start measuring performance in your app, pass a function

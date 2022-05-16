@@ -1,9 +1,9 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import NavBar from './NavBar';
 import TopCoinsTable from './TopCoinsTable';
-import { TopCoinsContext } from '../TopCoinsContext';
+import useFetch from './hooks/useFetch';
 const HomePage = () => {
-  const {data, loading, error} = useContext(TopCoinsContext)
+  const [data, loading, error] = useFetch('/api/topCoins')
   return (<div>
     <NavBar />
     <div id="user-interface">
