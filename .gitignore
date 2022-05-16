@@ -13,4 +13,6 @@ key.pem
 .jshintrc
 ProcFile
 yarn.lock
-client
+
+# Local Netlify folder
+.netlify

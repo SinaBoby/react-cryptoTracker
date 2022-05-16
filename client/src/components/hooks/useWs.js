@@ -36,7 +36,7 @@ const useWs = (symbol) => {
   }, [symbol]);
   function loadPriceTicker(symbol = 'btcusdt') {
     return new Promise((resolve, reject) => {
-      let ws = new WebSocket(`ws://localhost:5000/live?symbol=${symbol}`);
+      let ws = new WebSocket(`wss://sina-react-express-server.herokuapp.com/live?symbol=${symbol}`);
 
       ws.onopen = function () {
         console.log('connected');

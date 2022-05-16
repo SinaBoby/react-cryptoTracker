@@ -9,7 +9,7 @@ export const useFetch = (url) => {
     const signal = abortController.signal;
     (async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch("http://sina-react-express-server.herokuapp.com"+url);
         const json = await response.json();
         if (!signal.aborted) {
           setData(json);
