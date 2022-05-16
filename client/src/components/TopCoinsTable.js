@@ -1,9 +1,7 @@
 import React from 'react';
 import TopCoinRow from './TopCoinRow';
-import useFetch from './hooks/useFetch';
-const TopCoinsTable = () => {
-  const [data, loading, error] = useFetch('/api/topCoins');
 
+const TopCoinsTable = ({ data, loading, error }) => {
   return (
     <div id="topCoins-container">
       <h1>Top 50 of the Market</h1>
@@ -30,6 +28,12 @@ const TopCoinsTable = () => {
             <tr>
               <td>
                 <h2>{error.message}</h2>
+              </td>
+            </tr>
+          ) : data.length === 0 ? (
+            <tr>
+              <td>
+                <h3>Table is Empty</h3>
               </td>
             </tr>
           ) : (

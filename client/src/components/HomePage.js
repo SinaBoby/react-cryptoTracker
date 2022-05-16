@@ -1,11 +1,15 @@
-import React from 'react';
-
+import React,{useContext} from 'react';
+import NavBar from './NavBar';
 import TopCoinsTable from './TopCoinsTable';
+import { TopCoinsContext } from '../TopCoinsContext';
 const HomePage = () => {
-  return (
+  const {data, loading, error} = useContext(TopCoinsContext)
+  return (<div>
+    <NavBar />
     <div id="user-interface">
-      <TopCoinsTable />
+      <TopCoinsTable data={data} loading={loading} error={error} />
     </div>
+  </div>
   );
 };
 export default HomePage;

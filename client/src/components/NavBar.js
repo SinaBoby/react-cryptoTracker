@@ -45,6 +45,15 @@ const NavBar = () => {
         >
           Categories
         </NavLink>
+        <NavLink
+          className="nav-item"
+          style={activeLink
+          }
+          id="categories-info-page"
+          to="/watchList"
+        >
+          WatchList
+        </NavLink>
       </div>
     </div>
   );

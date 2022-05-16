@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import useFetch from './hooks/useFetch';
 import LivePriceList from './LivePriceList';
-
+import NavBar from './NavBar';
 import PairsList from './PairsList';
 
 const TechnicalPage = () => {
@@ -16,7 +16,7 @@ const TechnicalPage = () => {
   }
   return (
     <div>
-     
+     <NavBar />
       <LivePriceList />
       <div id="user-interface">
         {loading ? (

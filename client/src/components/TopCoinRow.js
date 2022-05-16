@@ -1,19 +1,38 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React,{useContext} from 'react';
+
+import { WatchListContext } from '../WatchListContext';
+import regularHeart from '../assets/heart-regular.svg';
+import solidHeart from '../assets/heart-solid.svg';
 const TopCoinRow = ({ coin}) => {
-  const location = useLocation();
+ 
 
   const clickHandler = () => {
     window.open(
-      location.pathname + `topCoinDetail/${coin.symbol}`,
+      `/topCoinDetail/${coin.symbol}`,
       '_blank',
       'toolbar=1,location=1,menubar=1,width=800,height=600',
     );
   };
+  const { watchList, setWatchList } = useContext(WatchListContext);
+  const toggleWatchList = () => {
+    setWatchList((prevState) => {
+      const arr = prevState.includes(coin.symbol)
+        ? prevState.filter((i) => i !== coin.symbol) // remove item
+        : [...prevState, coin.symbol]; // add item
+      return [...arr];
+    });
+  }
   return (
     <tr>
       
-      <td>{coin.market_cap_rank}</td>
+      <td>
+      <img
+          src={watchList.indexOf(coin.symbol) > -1 ? solidHeart : regularHeart}
+          alt={coin.symbol}
+          
+          onClick={toggleWatchList}
+        />
+        {coin.market_cap_rank}</td>
       <td>
         <img src={coin.image} className="coin-logo" />
         <p

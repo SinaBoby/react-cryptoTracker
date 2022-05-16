@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import HomePage from './components/HomePage';
-import NavBar from './components/NavBar';
+
 import TechnicalPage from './components/TechnicalPage';
 import CategoriesPage from './components/CategoriesPage';
 import MarketDataPage from './components/MarketDataPage';
@@ -9,11 +9,12 @@ import CategoryInfo from './components/CategoryInfo';
 import TechnicalChart from './components/TechnicalChart';
 import TopCoinDetail from './components/TopCoinDetail';
 import { Routes,Route } from 'react-router-dom';
+import WatchList from './components/WatchList';
 
 const App = () => {
   return (
     <div className="App">
-      <NavBar />
+      
       <Routes>
         <Route path="/" element={<HomePage />} />
 
@@ -25,11 +26,9 @@ const App = () => {
         <Route path="/categories" element={<CategoriesPage />}>
           <Route path="/categories/:category" element={<CategoryInfo />} />
         </Route>
+        <Route path="/watchList" element={<WatchList/>}/>
       </Routes>
-      <div id="user-interface">
-        <HomePage />
-       
-      </div>
+    
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import useFetch from './hooks/useFetch';
 import LivePriceList from './LivePriceList';
-
+import NavBar from './NavBar';
 import TrendsTable from './TrendsTable';
 import GlobalTable from './GlobalTable';
 import ExchangesTable from './ExchangesTable';
@@ -13,7 +13,7 @@ const MarketDataPage = () => {
  
   return (
     <div>
-      
+      <NavBar />
       <LivePriceList />
       <div id="user-interface">
         <div id="marketData-element">
