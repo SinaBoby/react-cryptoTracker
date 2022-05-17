@@ -28,7 +28,6 @@ export const getTopCoinsData = () => {
         }
       })
       .then((data) => {
-        console.log(data)
         data.forEach((coin) => {
           loadCoinData(coin);
           const name = document.getElementById(`${coin.symbol}`);

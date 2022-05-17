@@ -16,7 +16,7 @@ const App = () => {
  const {theme} = useContext(ThemeContext)
   
   return (
-    <div className={App} id={theme.background === "#222222" ? 'dark' : 'light' } style={{background:theme.background}}>
+    <div className="App" id={theme.background === "#222222" ? 'dark' : 'light' } style={{background:theme.background}}>
       
       <Routes>
         <Route path="/" element={<HomePage />} />

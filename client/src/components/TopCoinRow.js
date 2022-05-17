@@ -1,8 +1,11 @@
 import React,{useContext} from 'react';
 
+import {BsBookmarkStarFill,BsBookmarkStar} from 'react-icons/bs'
+import { IconContext } from "react-icons";
+import {FcBullish, FcBearish} from 'react-icons/fc'
 import { WatchListContext } from '../WatchListContext';
-import regularHeart from '../assets/heart-regular.svg';
-import solidHeart from '../assets/heart-solid.svg';
+
+
 const TopCoinRow = ({ coin}) => {
  
 
@@ -22,21 +25,21 @@ const TopCoinRow = ({ coin}) => {
       return [...arr];
     });
   }
+  const chartIconStyle = {width:"30px", height:"30px"}
   return (
     <tr>
       
-      <td>
-      <img
-          src={watchList.indexOf(coin.symbol) > -1 ? solidHeart : regularHeart}
-          alt={coin.symbol}
-          
-          onClick={toggleWatchList}
-        />
+      <td className="table-rank">
         {coin.market_cap_rank}</td>
+        <td>
+        <IconContext.Provider value={{ color: "red",size:20, className: "watchList-icon" }}>
+        {watchList.indexOf(coin.symbol) > -1 ? <BsBookmarkStarFill onClick={toggleWatchList} /> : <BsBookmarkStar onClick={toggleWatchList} style={chartIconStyle}/>}
+        </IconContext.Provider>
+        </td>
       <td>
         <img src={coin.image} className="coin-logo" />
         <p
-          style={{ cursor: 'pointer' }}
+          style={{ cursor: 'pointer',display:'inline',marginLeft:"10px" }}
           id={coin.symbol}
           onClick={clickHandler}
         >
@@ -44,12 +47,13 @@ const TopCoinRow = ({ coin}) => {
           {coin.name}
         </p>
       </td>
-      <td>${coin.current_price} $</td>
-      <td className="${coin.price_change_percentage_24h > 0 ? 'bullish' : 'bearish'}">
-        ${coin.price_change_percentage_24h} %
+      <td>{coin.current_price} $</td>
+      <td style={{color : coin.price_change_percentage_24h > 0 ? 'green' : 'red'}}>
+        {coin.price_change_percentage_24h} %
+        { coin.price_change_percentage_24h > 0 ? <FcBullish/> :<FcBearish/>}
       </td>
-      <td>${coin.total_volume} $</td>
-      <td>${coin.market_cap} $</td>
+      <td>{coin.total_volume} $</td>
+      <td>{coin.market_cap} $</td>
     </tr>
   );
 };

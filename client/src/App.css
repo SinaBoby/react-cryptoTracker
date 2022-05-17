@@ -1,6 +1,6 @@
 * {
   /* font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
-  color: #333333;
+  
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
@@ -10,8 +10,8 @@
   color:#ffffff
 }
 #light * {
-  color: #000000
-}
+  color: #333333;
+} 
 body {
   background-color: #f9f9f9;
 }
@@ -25,7 +25,10 @@ body {
 #logo:hover {
   cursor: pointer;
 }
-
+iframe {
+  border :7px solid #333333;
+  border-radius: 20px;
+}
 .navBar ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -121,7 +124,7 @@ th {
 
 #topCoins-container {
   margin: 0 auto h1;
-  margin-font-size: 2rem;
+  margin: 1.2rem;
 }
 
 #topCoins-container p {
@@ -170,8 +173,8 @@ table tbody tr td {
   width: max-content;
 }
 
-table tbody tr td td:nth-child(1) {
-  font-size: 1.1rem;
+table tbody tr td:nth-child(1) {
+  font-size: 1.2rem;
   width: 70px;
 }
 
@@ -226,6 +229,9 @@ table#exchanges tbody tr td {
   align-items: center;
   width: 100%;
   gap: 10px;
+}
+#top-coins-table td:nth-child(5) svg {
+font-size:1.2rem
 }
 
 .bullish {
@@ -367,7 +373,11 @@ option {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-
+.watchList-icon {
+  cursor: pointer;
+  color:red;
+  vertical-align: middle;
+}
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
@@ -394,7 +404,7 @@ option {
   body {
     overflow-x: hidden;
   }
-  header {
+  .navBar {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -403,13 +413,13 @@ option {
     align-items: center;
     height: 120px;
   }
-  header nav {
+  .navBar {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     width: 100%;
   }
-  header nav ul {
+  #nav-list {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -417,7 +427,7 @@ option {
     flex-wrap: wrap;
     gap: 10px;
   }
-  header .nav-item a {
+ .nav-item {
     width: 120px;
     text-align: center;
     font-size: 14px;
@@ -457,6 +467,19 @@ option {
     width: 100%;
   }
 }
+@media (max-width: 620px){
+  #top-five {
+   
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .livePrice-item {
+    padding:10px
+  }
+  table#trends tbody tr td {
+    width: 100px;
+  }
+}
 
 @media (max-width: 425px) {
   table tbody tr td {
@@ -489,7 +512,9 @@ option {
   }
   #top-five-list {
     font-size: 12px;
+   
   }
+ 
   #coins-list,
   #categories-list {
     width: 150px;
@@ -503,10 +528,10 @@ option {
     height: 35px;
     margin: 2.5px;
   }
-  header {
+  .navBar {
     height: 80px;
   }
-  header .nav-item {
+ .nav-item {
     padding: 2px 2px;
   }
   nav {
@@ -516,7 +541,7 @@ option {
     flex-direction: column;
     gap: 10px;
   }
-  header nav ul {
+  .nav-list {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -525,7 +550,7 @@ option {
     flex-wrap: nowrap;
     gap: 5px;
   }
-  header .nav-item a {
+  .nav-item {
     width: 100px;
     text-align: center;
     font-size: 11px;

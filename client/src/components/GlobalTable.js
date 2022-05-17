@@ -13,11 +13,7 @@ function GlobalTable({ data }) {
           <span>Number Of Markets :</span> {data.markets}
         </li>
         <li
-          className={
-            data.market_cap_change_percentage_24h_usd > 0
-              ? 'bullish'
-              : 'bearish'
-          }
+           style={{color : data.market_cap_change_percentage_24h_usd > 0 ? 'green' : 'red'}}
         >
           <span>Total Market Cap Change in 24h :</span>
           {data.market_cap_change_percentage_24h_usd}

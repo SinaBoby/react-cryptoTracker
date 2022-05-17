@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import ThemeToggleButton from './ThemeToggleButton';
+import {IconContext} from 'react-icons'
+import {FcFinePrint, FcCandleSticks,FcGlobe, FcFaq} from 'react-icons/fc'
 const NavBar = () => {
   const navigate = useNavigate();
 
@@ -13,6 +15,7 @@ const NavBar = () => {
       : { color: '#545e6f', background: '#f0f0f0' };
   return (
     <div className="navBar">
+      <IconContext.Provider value={{ style:{width:"30px", height:"30px"}, className: "watchList-icon" }}>
       <img
         src="https://github.com/SinaBoby/CryptoTrackerApp/blob/loading_spin_feature/public/assets/logo2.png?raw=true"
         alt="logo"
@@ -27,6 +30,7 @@ const NavBar = () => {
           to="/marketData"
         >
           Market Data
+          <FcGlobe/>
         </NavLink>
         <NavLink
           className="nav-item"
@@ -35,6 +39,7 @@ const NavBar = () => {
           to="/technical"
         >
           Technicals
+          <FcCandleSticks/>
         </NavLink>
         <NavLink
           className="nav-item"
@@ -43,6 +48,7 @@ const NavBar = () => {
           to="/categories"
         >
           Categories
+          <FcFaq/>
         </NavLink>
         <NavLink
           className="nav-item"
@@ -51,10 +57,12 @@ const NavBar = () => {
           to="/watchList"
         >
           WatchList
+          <FcFinePrint />
         </NavLink>
 
         <ThemeToggleButton />
       </div>
+      </IconContext.Provider>
     </div>
   );
 };
