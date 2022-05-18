@@ -36,6 +36,7 @@ This project has created as the end project for  [React module](https://github.c
 ![](https://img.shields.io/badge/Code-React-informational?style=flat&logo=React&color=F7DF1E)
 ![](https://img.shields.io/badge/Code-Node.js-informational?style=flat&logo=Node.js&color=E34F26)
 ![](https://img.shields.io/badge/Tools-express-informational?style=flat&logo=express&color=1572B6)
+![](https://img.shields.io/badge/Tools-heroku-informational?style=flat&logo=heroku&color=E34F26)
 
 ---
 ## Development
