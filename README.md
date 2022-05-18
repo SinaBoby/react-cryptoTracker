@@ -46,7 +46,7 @@ Server is running on `localhost:5000` and React client is running on `localhost:
 
 ## Installing Dependencies
 
-There are no dependencies needed to run the website, everything is prepared to work with vanilla JavaScript. However, if you want to install prettier for this project then run (generally you always want to do this if you see a `package.json` file):
+to install dependencies for this project run:
 
 - `npm install`
 
