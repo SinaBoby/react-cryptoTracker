@@ -13,6 +13,10 @@ This project has created as the end project for  [React module](https://github.c
 
 ## Features
 
+    - express app running http/websocket server and restful api.
+    
+    - React clien side using the Context API to have global state for changing the theme and having a watchlist.
+    
     - Show table of top 100 assets in Crypto market plus their info and price charts.
     
     - Show all pairs listed on Binance crypto exchange and their Technical charts with all useful options.
