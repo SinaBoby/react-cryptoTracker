@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
+import { ThemeContext } from '../ThemeContext';
 
 const LightChart = ({ pair }) => {
   const divRef = useRef(null);
-
+  const { theme } = useContext(ThemeContext);
   console.log(divRef);
   useEffect(() => {
     const script1 = document.createElement('script');
@@ -16,7 +17,7 @@ const LightChart = ({ pair }) => {
       width: '100%',
       height: '600px',
       locale: 'en',
-      colorTheme: 'dark',
+      colorTheme: `${theme.background === '#222222' ? 'dark' : 'light'}`,
       gridLineColor: 'rgba(42 ,46, 57, 0)',
       fontColor: '#787B86',
       isTransparent: false,

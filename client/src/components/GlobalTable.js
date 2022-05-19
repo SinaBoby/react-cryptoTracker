@@ -1,7 +1,6 @@
 import React from 'react';
 
 function GlobalTable({ data }) {
-  
   return (
     <div id="global-container">
       <h4>Global market data</h4>
@@ -13,7 +12,10 @@ function GlobalTable({ data }) {
           <span>Number Of Markets :</span> {data.markets}
         </li>
         <li
-           style={{color : data.market_cap_change_percentage_24h_usd > 0 ? 'green' : 'red'}}
+          style={{
+            color:
+              data.market_cap_change_percentage_24h_usd > 0 ? 'green' : 'red',
+          }}
         >
           <span>Total Market Cap Change in 24h :</span>
           {data.market_cap_change_percentage_24h_usd}

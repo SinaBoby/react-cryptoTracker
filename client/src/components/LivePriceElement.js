@@ -3,7 +3,7 @@ import { ThemeContext } from '../ThemeContext';
 import useWs from './hooks/useWs';
 const LivePriceElement = ({ symbol }) => {
   const [lastPrice, loading, error] = useWs(symbol);
-const {theme} = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext);
   return (
     <li className="livePrice-item">
       {loading ? (
@@ -16,7 +16,18 @@ const {theme} = useContext(ThemeContext)
           symbol.length,
         )}:`
       )}
-      <span style={{ color: lastPrice.color === 'black' && theme.foreground === "#EEEEEE" ? "#EEEEEE" : lastPrice.color,margin:"0 4px 0 3px" }}>{lastPrice.value}</span>$
+      <span
+        style={{
+          color:
+            lastPrice.color === 'black' && theme.foreground === '#EEEEEE'
+              ? '#EEEEEE'
+              : lastPrice.color,
+          margin: '0 4px 0 3px',
+        }}
+      >
+        {lastPrice.value}
+      </span>
+      $
     </li>
   );
 };

@@ -11,12 +11,12 @@ const TechnicalPage = () => {
   const navigate = useNavigate();
   function handlePairChange(e) {
     const pair = e.target.value;
-   
+
     navigate(`${pair}`);
   }
   return (
     <div>
-     <NavBar />
+      <NavBar />
       <LivePriceList />
       <div id="user-interface">
         {loading ? (

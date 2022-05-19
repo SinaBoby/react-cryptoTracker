@@ -7,23 +7,19 @@ import reportWebVitals from './reportWebVitals';
 import { CategoriesProvider } from './CategoriesContext';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { WatchListProvider } from './WatchListContext';
-import {  ThemeProvider } from './ThemeContext';
-
+import { ThemeProvider } from './ThemeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider>
-
     <WatchListProvider>
-    <CategoriesProvider>
-      <Router>
-        <App />
-      </Router>
-    </CategoriesProvider>
-  </WatchListProvider>
-  </ThemeProvider>
- 
-  ,
+      <CategoriesProvider>
+        <Router>
+          <App />
+        </Router>
+      </CategoriesProvider>
+    </WatchListProvider>
+  </ThemeProvider>,
 );
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

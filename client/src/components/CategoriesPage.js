@@ -30,7 +30,7 @@ const CategoriesPage = () => {
   }
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <LivePriceList />
       <div id="user-interface">
         <h1>categories</h1>

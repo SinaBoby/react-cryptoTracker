@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import HomePage from './components/HomePage';
 
@@ -8,16 +8,20 @@ import MarketDataPage from './components/MarketDataPage';
 import CategoryInfo from './components/CategoryInfo';
 import TechnicalChart from './components/TechnicalChart';
 import TopCoinDetail from './components/TopCoinDetail';
-import { Routes,Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import WatchList from './components/WatchList';
 import { ThemeContext } from './ThemeContext';
 
 const App = () => {
- const {theme} = useContext(ThemeContext)
-  
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="App" id={theme.background === "#222222" ? 'dark' : 'light' } style={{background:theme.background}}>
-      <hr/>
+    <div
+      className="App"
+      id={theme.background === '#222222' ? 'dark' : 'light'}
+      style={{ background: theme.background }}
+    >
+      <hr />
       <Routes>
         <Route path="/" element={<HomePage />} />
 
@@ -29,9 +33,8 @@ const App = () => {
         <Route path="/categories" element={<CategoriesPage />}>
           <Route path="/categories/:category" element={<CategoryInfo />} />
         </Route>
-        <Route path="/watchList" element={<WatchList/>}/>
+        <Route path="/watchList" element={<WatchList />} />
       </Routes>
-    
     </div>
   );
 };

@@ -4,14 +4,15 @@ import TopCoinRow from './TopCoinRow';
 const TopCoinsTable = ({ data, loading, error }) => {
   return (
     <div id="topCoins-container">
-      <h1>Top 100 of the Market</h1>
+      <h1 className="table-title">Cryptocurrency Prices by Market Cap</h1>
       <p>Click on each Coin Name to open the price Chart in new window</p>
       <table id="top-coins-table">
         <thead>
           <tr>
             <th>#</th>
-            <th>WatchList</th>
+            <th>Watch</th>
             <th>Coin</th>
+            <th></th>
             <th>Price</th>
             <th>24h change</th>
             <th>24h volume</th>

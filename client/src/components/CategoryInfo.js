@@ -43,7 +43,7 @@ function CategoryInfo() {
             <img id="third-asset" src={selected.top_3_coins[2]} />
           </ul>
         </div>
-      ) :categoriesLoading ? (
+      ) : categoriesLoading ? (
         <div id="loading"></div>
       ) : categoriesError ? (
         <h2>{categoriesError.message}</h2>

@@ -6,7 +6,16 @@ export const CategoriesProvider = ({ children }) => {
   const [categoriesError, setCategoriesError] = useState([]);
 
   return (
-    <CategoriesContext.Provider value={{ categories, setCategories,categoriesLoading, setCategoriesLoading,categoriesError, setCategoriesError }}>
+    <CategoriesContext.Provider
+      value={{
+        categories,
+        setCategories,
+        categoriesLoading,
+        setCategoriesLoading,
+        categoriesError,
+        setCategoriesError,
+      }}
+    >
       {children}
     </CategoriesContext.Provider>
   );
