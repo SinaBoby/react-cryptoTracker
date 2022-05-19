@@ -7,7 +7,7 @@
   padding: 0;
 }
 #dark * {
-  color:#ffffff
+  color:#EEEEEE
 }
 #light * {
   color: #333333;
@@ -75,7 +75,10 @@ iframe {
 }
 .navBar {
   height: 80px;
-  background-color: #9ca3af;
+  margin-top:20px;
+  border-top: 1px solid #9ca3af;
+  /* background-color: #9ca3af; */
+  border-bottom: 1px solid #9ca3af;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -377,6 +380,12 @@ option {
   cursor: pointer;
   color:red;
   vertical-align: middle;
+  margin: 0px 5px 0px 5px;
+}
+.selectBar {
+  color:#333333;
+  background:#8BC34A;
+  border-radius: 20px;
 }
 @-webkit-keyframes spin {
   from {

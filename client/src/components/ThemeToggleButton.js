@@ -1,9 +1,10 @@
-import React, {useState, useContext} from "react";
+import React, { useContext} from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { ThemeContext } from "../ThemeContext";
 const ThemeToggleButton =  () => {
   const {toggleFunction} = useContext(ThemeContext)
-  const [isDarkMode, setIsDarkMode] = useState( false);
+  const {isDarkMode, setIsDarkMode} = useContext(ThemeContext)
+  
   return (
     <DarkModeToggle
       onChange={() => {
@@ -11,7 +12,7 @@ const ThemeToggleButton =  () => {
         toggleFunction()
       }}
       checked={isDarkMode}
-      size={80}
+      size={60}
     />
   );
 };

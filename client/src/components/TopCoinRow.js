@@ -25,15 +25,15 @@ const TopCoinRow = ({ coin}) => {
       return [...arr];
     });
   }
-  const chartIconStyle = {width:"30px", height:"30px"}
+  const chartIconStyle = {width:"20px", height:"20px"}
   return (
     <tr>
       
       <td className="table-rank">
         {coin.market_cap_rank}</td>
         <td>
-        <IconContext.Provider value={{ color: "red",size:20, className: "watchList-icon" }}>
-        {watchList.indexOf(coin.symbol) > -1 ? <BsBookmarkStarFill onClick={toggleWatchList} /> : <BsBookmarkStar onClick={toggleWatchList} style={chartIconStyle}/>}
+        <IconContext.Provider value={{size:20, className: "watchList-icon" }}>
+        {watchList.indexOf(coin.symbol) > -1 ? <BsBookmarkStarFill  onClick={toggleWatchList} /> : <BsBookmarkStar onClick={toggleWatchList} style={chartIconStyle}/>}
         </IconContext.Provider>
         </td>
       <td>

@@ -40,7 +40,7 @@ const CategoriesPage = () => {
         ) : error ? (
           <h2>{error.message}</h2>
         ) : (
-          <select onChange={handleCatChange}>
+          <select className="selectBar" onChange={handleCatChange}>
             {available &&
               available.map((cat, index) => {
                 return <option key={index}>{cat.name}</option>;

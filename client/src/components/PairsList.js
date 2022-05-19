@@ -9,7 +9,7 @@ const PairsList = ({ pairs, handlePairChange }) => {
       <h1>Technical</h1>
       <h2>Please select a category from the list:</h2>
 
-      <select style={{color:'#333333'}} onChange={handlePairChange}>
+      <select className="selectBar"  onChange={handlePairChange}>
         {pairs &&
           pairs.map((pair, index) => {
             return <option key={index}>{pair}</option>;

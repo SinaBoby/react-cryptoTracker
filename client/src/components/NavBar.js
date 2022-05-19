@@ -1,23 +1,24 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import ThemeToggleButton from './ThemeToggleButton';
 import {IconContext} from 'react-icons'
 import {FcFinePrint, FcCandleSticks,FcGlobe, FcFaq} from 'react-icons/fc'
+import { ThemeContext } from '../ThemeContext';
 const NavBar = () => {
   const navigate = useNavigate();
-
+const {theme} = useContext(ThemeContext)
   function navigateToHome() {
     navigate('/');
   }
   const activeLink = ({ isActive }) =>
-    isActive
-      ? { color: '#fff', background: '#9ca3af' }
-      : { color: '#545e6f', background: '#f0f0f0' };
+    isActive && theme.background === "#eeeeee"
+      ? { color: '#fff', background: '#9ca3af' } : isActive && theme.background === "#222222" ? { color : '#545e6f' ,background: "#eeeeee"}
+      : { color: theme.foreground, background: theme.background };
   return (
     <div className="navBar">
       <IconContext.Provider value={{ style:{width:"30px", height:"30px"}, className: "watchList-icon" }}>
       <img
-        src="https://github.com/SinaBoby/CryptoTrackerApp/blob/loading_spin_feature/public/assets/logo2.png?raw=true"
+        src={theme.background === "#eeeeee" ? "https://github.com/SinaBoby/CryptoTrackerApp/blob/loading_spin_feature/public/assets/logo.png?raw=true" : "https://github.com/SinaBoby/CryptoTrackerApp/blob/loading_spin_feature/public/assets/logo2.png?raw=true" }
         alt="logo"
         id="logo"
         onClick={navigateToHome}

@@ -17,7 +17,7 @@ const App = () => {
   
   return (
     <div className="App" id={theme.background === "#222222" ? 'dark' : 'light' } style={{background:theme.background}}>
-      
+      <hr/>
       <Routes>
         <Route path="/" element={<HomePage />} />
 
