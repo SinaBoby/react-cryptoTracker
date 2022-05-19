@@ -221,6 +221,9 @@ table td:nth-child(3) {
 #top-coins-table td:nth-child(4) svg {
   font-size: 1.1rem;
 }
+#top-coins-table td:nth-child(4) span {
+  font-weight: 400;
+}
 .symbol {
   display: flex;
   justify-content: space-evenly;
@@ -233,7 +236,11 @@ table td:nth-child(3) {
 .bearish {
   color: red;
 }
-
+.tradingview-widget-container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+}
 #top-five-list {
   border-bottom: 1px solid #9ca3af;
   padding: 10px 0;

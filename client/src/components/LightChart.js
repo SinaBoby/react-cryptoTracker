@@ -1,25 +1,25 @@
 import React, { useEffect, useRef, useContext } from 'react';
 import { ThemeContext } from '../ThemeContext';
 
+
 const LightChart = ({ pair }) => {
   const divRef = useRef(null);
-  const { theme } = useContext(ThemeContext);
-  console.log(divRef);
+  const {theme} = useContext(ThemeContext)
   useEffect(() => {
-    const script1 = document.createElement('script');
-    script1.src = 'https://s3.tradingview.com/tv.js';
-    script1.async = true;
-    script1.type = 'text/javascript';
+    console.log(theme)
+    const script = document.createElement('script');
+    script.src = 'https://s3.tradingview.com/tv.js';
+    script.async = true;
+    script.type = 'text/javascript';
 
-    script1.innerHTML = new window.TradingView.MediumWidget({
+    script.innerHTML = new window.TradingView.MediumWidget({
       symbols: [[`BINANCE:${pair}|1D`]],
       chartOnly: false,
       width: '100%',
       height: '600px',
       locale: 'en',
-      colorTheme: `${theme.background === '#222222' ? 'dark' : 'light'}`,
-      gridLineColor: 'rgba(42 ,46, 57, 0)',
-      fontColor: '#787B86',
+      colorTheme: `${theme.background === "#222222" ? "dark" : "light"}`,
+     
       isTransparent: false,
       autosize: true,
       showVolume: true,
@@ -30,19 +30,19 @@ const LightChart = ({ pair }) => {
       valuesTracking: '1',
       chartType: 'area',
       lineColor: '#2962FF',
-      bottomColor: 'rgba(41, 98, 255, 0)',
-      topColor: 'rgba(41, 98, 255, 0.3)',
+      gridLineColor: 'rgba(42 ,46, 57, 0)',
+      fontColor: '#787B86',
       container_id: `btc`,
     });
-    if (divRef.current) divRef.current.append(script1);
-  }, []);
+    if (divRef.current) divRef.current.append(script);
+  },[theme, pair]);
 
   return (
     <div className="TechnicalWidget-wrapper">
       <div
         className="tradingview-widget-container"
         id="btc"
-        style={{ width: '800px', height: '600px', position: 'relative' }}
+        
         ref={divRef}
       ></div>
     </div>

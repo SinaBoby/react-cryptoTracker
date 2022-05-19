@@ -9,11 +9,11 @@ const TechnicalWidget = ({ symbol }) => {
     .filter((pair) => pair !== 'usdt')
     .map((pair) => 'BINANCE:' + pair.toUpperCase() + 'USDT');
   useEffect(() => {
-    const script1 = document.createElement('script');
-    script1.src = 'https://s3.tradingview.com/tv.js';
-    script1.async = true;
-    script1.type = 'text/javascript';
-    script1.innerHTML = new window.TradingView.widget({
+    const script = document.createElement('script');
+    script.src = 'https://s3.tradingview.com/tv.js';
+    script.async = true;
+    script.type = 'text/javascript';
+    script.innerHTML = new window.TradingView.widget({
       autosize: true,
       symbol: `BINANCE:${symbol}`,
       interval: 'D',
@@ -37,7 +37,7 @@ const TechnicalWidget = ({ symbol }) => {
       popup_height: '650',
       container_id: `btc`,
     });
-    if (widgetContainer.current) widgetContainer.current.append(script1);
+    if (widgetContainer.current) widgetContainer.current.append(script);
   }, [symbol, theme]);
 
   return (

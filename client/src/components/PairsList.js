@@ -7,7 +7,7 @@ const PairsList = ({ pairs, handlePairChange }) => {
   return (
     <div>
       <h1>Technical</h1>
-      <h2>Please select a category from the list:</h2>
+      <h2>Please select your option from the list:</h2>
 
       <select className="selectBar" onChange={handlePairChange}>
         {pairs &&

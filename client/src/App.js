@@ -25,7 +25,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/topCoinDetail/:coin" element={<TopCoinDetail />} />
+        <Route path="/topCoinDetail/:coin"  element={<TopCoinDetail  />} />
         <Route path="/marketData" element={<MarketDataPage />} />
         <Route path="/technical" element={<TechnicalPage />}>
           <Route path="/technical/:pair" element={<TechnicalChart />} />
