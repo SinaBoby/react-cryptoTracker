@@ -236,6 +236,7 @@ table td:nth-child(3) {
 .bearish {
   color: red;
 }
+
 .tradingview-widget-container {
   position: relative;
   width: 800px;
@@ -324,9 +325,6 @@ option {
   line-height: 2rem;
 }
 
-.tradingview-widget-container {
-  height: 600px;
-}
 
 #marketData-element h4 {
   margin: 2rem 0 1rem 0;
