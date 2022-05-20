@@ -1,12 +1,17 @@
-import React, { useEffect, useRef, useContext } from 'react';
-import { ThemeContext } from '../ThemeContext';
+
+import React, { useEffect, useRef } from 'react';
+
 
 
 const LightChart = ({ pair }) => {
   const divRef = useRef(null);
-  const {theme} = useContext(ThemeContext)
+ let theme;
+ useEffect(()=> {
+   theme = JSON.parse(localStorage.getItem('theme'))   
+ },[theme])
+ 
+
   useEffect(() => {
-    console.log(theme)
     const script = document.createElement('script');
     script.src = 'https://s3.tradingview.com/tv.js';
     script.async = true;
@@ -35,7 +40,7 @@ const LightChart = ({ pair }) => {
       container_id: `btc`,
     });
     if (divRef.current) divRef.current.append(script);
-  },[theme, pair]);
+  },[theme]);
 
   return (
     <div className="TechnicalWidget-wrapper">
